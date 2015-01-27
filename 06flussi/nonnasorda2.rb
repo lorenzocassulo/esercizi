@@ -1,28 +1,32 @@
 # encoding utf-8
+saluto = 0
 puts 'Ciao nipote sei venuto a trovarmi?'
 nipote = gets.chomp
 while (nipote != 'CIAO')
 	if (nipote != nipote.upcase)
 		puts 'EH?! ALZA LA VOCE NON SENTO!'
 		nipote = gets.chomp
-else
+		saluto = 0
+	else
 		anno = rand(10)
-		puts 'NO, NON DAL 193' + anno.to_s + '!'
+		puts 'NO, NON DAL 192' + anno.to_s + '!'
 		nipote = gets.chomp
+		saluto = 0
 	end
 end
-saluto = 0
 while (nipote == 'CIAO' and saluto < 3)
-	puts 'MA VAI GIA\' VIA?'
+	saluto = saluto.to_i + 1
+	anno = rand(10)
+	puts 'NO, NON DAL 193' + anno.to_s + '!'
 	nipote = gets.chomp
-		if (nipote = 'CIAO')
-			saluto = saluto + 1
-			puts 'COME?'
+	saluto = saluto.to_i + 1
+		if nipote == 'CIAO'
+			puts 'COSA?'
+		else
+			anno = rand(10)
+			puts 'NO, NON DAL 194' + anno.to_s + '!'
 			nipote = gets.chomp
-			puts saluto.to_s
-		else 
-			puts 'COME?'
 		end
-	puts 'VA BENE CIAO!'
 end
+puts 'VA BENE CIAO!'
 puts 'TORNA PRESTO!'
